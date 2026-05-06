@@ -13,6 +13,8 @@ services:
     build: ./backend-app
     ports:
       - "3000:3000"
+    volumes:
+      - backend_data:/app/data
 
 volumes:
   backend_data:
