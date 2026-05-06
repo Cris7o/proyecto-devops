@@ -1,8 +1,9 @@
-version: '3.8'
-
 services:
   frontend:
-    build: ./frontend-app
+    build:
+      context: ./frontend-app
+      args:
+        VITE_API_URL: http://localhost:3000
     ports:
       - "80:80"
     depends_on:
@@ -12,3 +13,6 @@ services:
     build: ./backend-app
     ports:
       - "3000:3000"
+
+volumes:
+  backend_data:
